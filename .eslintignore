@@ -1,0 +1,9 @@
+src/registerServiceWorker.js
+node_modules/*
+public/*
+build/*
+.next/*
+config/*
+.vscode/*
+static/*.js
+.eslintrc.json

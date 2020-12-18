@@ -1,4 +1,55 @@
 {
-  "presets": ["next/babel"],
-  "plugins": [["styled-components", { "ssr": true }]]
+    "presets": ["next/babel"],
+    "env": {
+        "development": {
+            "plugins": [
+                [
+                    "styled-components",
+                    {
+                        "ssr": true,
+                        "displayName": true,
+                        "preprocess": false
+                    }
+                ],
+                [
+                    "@babel/plugin-proposal-decorators",
+                    {
+                        "legacy": true
+                    }
+                ],
+                ["@babel/plugin-proposal-optional-chaining"]
+            ]
+        },
+        "production": {
+            "plugins": [
+                [
+                    "styled-components",
+                    {
+                        "ssr": true,
+                        "displayName": false,
+                        "preprocess": false
+                    }
+                ],
+                [
+                    "@babel/plugin-proposal-decorators",
+                    {
+                        "legacy": true
+                    }
+                ],
+                ["@babel/plugin-proposal-optional-chaining"]
+            ]
+        }
+    },
+    "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@/components": "./components",
+          "@/lib": "./lib",
+          "@/pages": "./pages"
+        }
+      }
+    ]
+  ]
 }

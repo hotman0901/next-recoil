@@ -1,0 +1,16 @@
+src/registerServiceWorker.js
+node_modules/*
+public/*
+build/*
+.next/*
+config/*
+.vscode/*
+static/*.js
+.eslintrc.json
+README.md
+.babelrc
+.vscode-test/
+out/
+dist/
+test-fixtures/
+node_modules/
