@@ -5,16 +5,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext js,jsx",
+    "lint": "eslint . --ext js,jsx,.json",
     "prettier": "prettier .",
     "check-format": "npm run prettier -- --list-different",
     "validate": "npm run lint && npm run check-format",
     "format": "npm run prettier -- --write",
-    "fix-code": "eslint . --fix src --ext .js,.vue,.json",
     "precommit": "echo 'pre-commit checks...' && exit 0",
     "release": "standard-version",
     "release-tag": "git push --follow-tags origin master"
   },
+  "pre-commit": [
+    "precommit",
+    "validate"
+  ],
   "dependencies": {
     "deep-equal": "^2.0.5",
     "next": "latest",
@@ -53,17 +56,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "helmet": "^4.2.0",
     "is_js": "^0.9.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.2.1",
     "standard-version": "^9.0.0"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "arrowParens": "avoid",
-    "bracketSpacing": true,
-    "proseWrap": "always",
-    "printWidth": 90
   }
 }

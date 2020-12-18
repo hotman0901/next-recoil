@@ -14,3 +14,9 @@ out/
 dist/
 test-fixtures/
 node_modules/
+.eslintrc.json
+package.json
+jsconfig.json
+README-release.md
+yarn.lock
+

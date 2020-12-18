@@ -7,3 +7,8 @@ config/*
 .vscode/*
 static/*.js
 .eslintrc.json
+package.json
+jsconfig.json
+README-release.md
+yarn.lock
+
