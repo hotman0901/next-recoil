@@ -1,0 +1,16 @@
+{
+  "title": "標題",
+  "coming": {
+    "title1": "再等等",
+    "title2": "我正在自己寫code開發中"
+  },
+  "SEE MORE": "更多",
+  "PORTRAIT": "人像",
+  "LANDSCAPE": "風景",
+  "PRODUCT": "產品",
+  "about": {
+    "title": "一個喜歡攝影的男子",
+    "dscr": "我是一名前端工程師，平常無聊喜歡攝影。"
+  },
+  "Skill": "技能"
+}
