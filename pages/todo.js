@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import { i18n, withTranslation } from '@/i18n';
 import { addTodo, deleteTodo, todoState } from '@/lib/recoil/todo';
 import PropTypes from 'prop-types';
 import { useMemo, useState } from 'react';
 // import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
-import { i18n, withTranslation } from '../i18n';
 
 const Title = styled.h1`
   font-size: 50px;

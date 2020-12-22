@@ -1,53 +1,60 @@
 {
-    "presets": ["next/babel"],
-    "env": {
-        "development": {
-            "plugins": [
-                [
-                    "styled-components",
-                    {
-                        "ssr": true,
-                        "displayName": true,
-                        "preprocess": false
-                    }
-                ],
-                [
-                    "@babel/plugin-proposal-decorators",
-                    {
-                        "legacy": true
-                    }
-                ],
-                ["@babel/plugin-proposal-optional-chaining"]
-            ]
-        },
-        "production": {
-            "plugins": [
-                [
-                    "styled-components",
-                    {
-                        "ssr": true,
-                        "displayName": false,
-                        "preprocess": false
-                    }
-                ],
-                [
-                    "@babel/plugin-proposal-decorators",
-                    {
-                        "legacy": true
-                    }
-                ],
-                ["@babel/plugin-proposal-optional-chaining"]
-            ]
-        }
+  "presets": [
+    "next/babel"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true,
+            "displayName": true,
+            "preprocess": false
+          }
+        ],
+        [
+          "@babel/plugin-proposal-decorators",
+          {
+            "legacy": true
+          }
+        ],
+        [
+          "@babel/plugin-proposal-optional-chaining"
+        ]
+      ]
     },
-    "plugins": [
+    "production": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true,
+            "displayName": false,
+            "preprocess": false
+          }
+        ],
+        [
+          "@babel/plugin-proposal-decorators",
+          {
+            "legacy": true
+          }
+        ],
+        [
+          "@babel/plugin-proposal-optional-chaining"
+        ]
+      ]
+    }
+  },
+  "plugins": [
     [
       "module-resolver",
       {
         "alias": {
-          "@/components": "./components",
-          "@/lib": "./lib",
-          "@/pages": "./pages"
+          "@/components": "./src/components",
+          "@/lib": "./src/lib",
+          "@/pages": "./pages",
+          "@/i18n": "./i18n.js"
         }
       }
     ]

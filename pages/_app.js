@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
+import { appWithTranslation } from '@/i18n';
 import App from 'next/app';
 import { RecoilRoot } from 'recoil';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
-import { appWithTranslation } from '../i18n';
 
 const GlobalStyle = createGlobalStyle`
   body {
