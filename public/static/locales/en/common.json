@@ -1,0 +1,16 @@
+{
+  "title": "Title",
+  "coming": {
+    "title1": "Coming soon",
+    "title2": "I'm developing by myself"
+  },
+  "SEE MORE": "SEE MORE",
+  "PORTRAIT": "PORTRAIT",
+  "LANDSCAPE": "LANDSCAPE",
+  "PRODUCT": "PRODUCT",
+  "about": {
+    "title": "Just a man who likes photography",
+    "dscr": "I'm a front-end developer and like photography in life."
+  },
+  "Skill": "Skill"
+}

@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { appWithTranslation } from '@/i18n';
+import App from 'next/app';
 import { RecoilRoot } from 'recoil';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
@@ -17,7 +19,7 @@ const theme = {
   }
 };
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <RecoilRoot>
       <GlobalStyle />
@@ -28,3 +30,10 @@ export default function MyApp({ Component, pageProps }) {
     </RecoilRoot>
   );
 }
+
+MyApp.getInitialProps = async appContext => {
+  const appProps = await App.getInitialProps(appContext);
+  return { ...appProps };
+};
+
+export default appWithTranslation(MyApp);
