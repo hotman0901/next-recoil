@@ -28,6 +28,7 @@
     "react-fast-compare": "^3.2.0",
     "react-is": "^17.0.1",
     "recoil": "0.1.2",
+    "rxjs": "^6.6.3",
     "styled-components": "^5.2.1",
     "styled-normalize": "^8.0.7",
     "waait": "^1.0.5"

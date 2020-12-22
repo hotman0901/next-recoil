@@ -2,9 +2,11 @@
 import { i18n, withTranslation } from '@/i18n';
 import { addTodo, deleteTodo, todoState } from '@/lib/recoil/todo';
 import PropTypes from 'prop-types';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 // import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import styled from 'styled-components';
 
 const Title = styled.h1`
@@ -20,6 +22,21 @@ const useTodo = () => ({
 
 const Counter = ({ t, currentLanguage }) => {
   const [todo, setTodo] = useState('');
+  const [subject, setSubject] = useState(null);
+
+  useEffect(() => {
+    // BehaviorSubject init 也會 trigger，init 不 trigger 要改用 Subject
+    const subscription = new Subject();
+    setSubject(subscription);
+    // eslint-disable-next-line no-console
+    const sub$ = subscription.pipe(tap(v => console.log(v)));
+    // 執行訂閱
+    sub$.subscribe();
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
+
   const { list, addItem, deleteItem } = useTodo();
 
   const renderTodo = useMemo(
@@ -34,6 +51,12 @@ const Counter = ({ t, currentLanguage }) => {
   );
   const getLanguage = () => i18n.language || currentLanguage;
 
+  const handleInput = e => {
+    setTodo(e.target.value);
+    // 執行 next 就會觸發 pipe
+    subject.next(e.target.value);
+  };
+
   return (
     <div>
       <Title>styled-component - {t('title')}</Title>
@@ -45,7 +68,7 @@ const Counter = ({ t, currentLanguage }) => {
         change language
       </button>
       <div>language: {getLanguage()}</div>
-      <input type="text" value={todo} onChange={e => setTodo(e.target.value)} />
+      <input type="text" value={todo} onChange={e => handleInput(e)} />
       <button onClick={() => addItem(todo)}>add</button>
       {renderTodo}
     </div>
