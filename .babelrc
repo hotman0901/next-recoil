@@ -52,6 +52,7 @@
       {
         "alias": {
           "@/components": "./src/components",
+          "@/containers": "./src/containers",
           "@/lib": "./src/lib",
           "@/pages": "./pages",
           "@/i18n": "./i18n.js"
